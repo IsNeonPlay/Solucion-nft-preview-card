@@ -1,0 +1,158 @@
+/**************** GENERAL STYLES ****************/
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --Text-time-color: hsl(215, 51%, 70%);
+  --Content-price-color: hsl(178, 100%, 50%);
+  --Bg-color: hsl(217, 54%, 11%);
+  --Bg-card-color: hsl(216, 50%, 16%);
+  --Paragraph-color: hsl(220, 22%, 55%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--Bg-color);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.938rem;
+  color: var(--White);
+}
+
+/**************** MAIN ****************/
+.card {
+  padding: 1.6em;
+  max-width: 20.833em;
+  background-color: var(--Bg-card-color);
+  border-radius: 1em;
+  box-shadow: 0 0 1.042rem rgba(0, 0, 0, 0.2);
+}
+.card__img {
+  width: 100%;
+  border-radius: .5em;
+}
+.card__with-hover-img div {
+  width: 17.65em;
+  height: 17.65em;
+  --Content-price-color: hsla(178, 100%, 50%, 0.4);;
+  background-color: var(--Content-price-color);
+  border-radius: .5em;
+  position: absolute;
+  top: calc(100vh - 78.9vh);
+  opacity: 0;
+  transition: all .4s ease-in-out;
+}
+.card__with-hover-img div img {
+  max-height: 16.54em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*********** Card content ***********/
+.card__content {
+  margin-top: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.99em;
+}
+.card__content-title {
+  font-size: 1.4rem;
+}
+.card__content-paragraph {
+  font-size: 0.938rem;
+  color: var(--Paragraph-color);
+}
+
+/***** status card *****/
+.card__content-status {
+  display: grid;
+  grid-template-columns: 1fr .5fr 1fr;
+}
+
+/** content price **/
+.card__content-price {
+  display: flex;
+  gap: .5em;
+}
+.card__content-price-value {
+  font-size: 0.938rem;
+  color: var(--Content-price-color);
+}
+
+/** content time **/
+.card__content-time {
+  grid-column: 3 / 4;
+  display: flex;
+  justify-content: flex-end;
+  gap: .5em;
+  color: var(--Text-time-color);
+}
+
+hr {
+  border: none;
+  height: 0.067em;
+  background: var(--Text-time-color);
+  opacity: .3;
+}
+
+/********* Content creator *********/
+.card__content-creator {
+  align-items: center;
+  display: inline-flex;
+  gap: 1em;
+}
+.card__content-creator-avatar {
+  width: 1.823em;
+  border: 0.052em solid var(--White);
+  border-radius: 50%;
+}
+.card-text-decoration {
+  color: rgb(215, 215, 215);
+}
+
+/**************** FOOTER ****************/
+.attribution {
+  margin-top: 5em;
+  font-size: 11px;
+  text-align: center; 
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+/**************** HOVER ****************/
+
+.card__with-hover-img div:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.card__content-title:hover,
+.card-text-decoration:hover{
+  color: var(--Content-price-color);
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+/**************** RESPONSIVE ****************/
+@media only screen and (max-height: 800px) {
+  .card__with-hover-img div {
+    top: calc(100vh - 83.3vh);
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .card {
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);
+  }
+}
