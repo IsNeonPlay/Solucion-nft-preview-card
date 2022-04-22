@@ -1,4 +1,4 @@
-# Solucion-nft-preview-card
+# Solucion NFT preview card By IsNeonPlay
 Front-end Mentor Challenge Partially Passed :(
 
 
